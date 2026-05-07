@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>권신경아</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=IBM+Plex+Sans+KR:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #ffffff;
+    color: #111;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+  }
+
+  .wrap {
+    max-width: 560px;
+    width: 100%;
+  }
+
+  .name-block {
+    margin-bottom: 56px;
+  }
+
+  .name-ko {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: clamp(36px, 8vw, 56px);
+    font-weight: 800;
+    color: #111;
+    line-height: 1.1;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+
+  .name-en {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: #999;
+    letter-spacing: 0.15em;
+  }
+
+  .divider {
+    width: 32px;
+    height: 1px;
+    background: #ddd;
+    margin-bottom: 40px;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .link-item {
+    display: flex;
+    align-items: stretch;
+    text-decoration: none;
+    border: 1px solid #e8e8e8;
+    background: #fff;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .link-item:hover {
+    border-color: #aaa;
+    background: #fafafa;
+  }
+
+  .link-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: #ccc;
+    width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #f0f0f0;
+    flex-shrink: 0;
+    transition: color 0.2s;
+  }
+
+  .link-item:hover .link-num {
+    color: #888;
+  }
+
+  .link-body {
+    padding: 20px 24px;
+    flex: 1;
+  }
+
+  .link-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: #bbb;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .link-title {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #222;
+    line-height: 1.35;
+    margin-bottom: 4px;
+    word-break: keep-all;
+    transition: color 0.2s;
+  }
+
+  .link-item:hover .link-title {
+    color: #111;
+  }
+
+  .link-sub {
+    font-size: 12px;
+    color: #bbb;
+    line-height: 1.6;
+    word-break: keep-all;
+  }
+
+  .link-arrow {
+    display: flex;
+    align-items: center;
+    padding: 0 20px 0 8px;
+    color: #ddd;
+    font-size: 16px;
+    transition: color 0.2s, transform 0.2s;
+    flex-shrink: 0;
+  }
+
+  .link-item:hover .link-arrow {
+    color: #666;
+    transform: translateX(3px);
+  }
+
+  /* 커뮤니티 링크 (텍스트 스타일) */
+  .community-links {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 2px;
+  }
+
+  .community-item {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    text-decoration: none;
+    border: 1px solid #e8e8e8;
+    background: #fff;
+    padding: 14px 24px 14px 0;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .community-item:hover {
+    border-color: #aaa;
+    background: #fafafa;
+  }
+
+  .community-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: #ccc;
+    width: 44px;
+    text-align: center;
+    flex-shrink: 0;
+    border-right: 1px solid #f0f0f0;
+    padding: 0;
+    margin-right: 24px;
+    transition: color 0.2s;
+  }
+
+  .community-item:hover .community-num {
+    color: #888;
+  }
+
+  .community-text {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: #555;
+    letter-spacing: 0.02em;
+    flex: 1;
+    transition: color 0.2s;
+  }
+
+  .community-item:hover .community-text {
+    color: #111;
+  }
+
+  .community-arrow {
+    font-size: 14px;
+    color: #ddd;
+    transition: color 0.2s, transform 0.2s;
+    padding-right: 0;
+    margin-left: 8px;
+  }
+
+  .community-item:hover .community-arrow {
+    color: #666;
+    transform: translateX(3px);
+  }
+
+  .footer {
+    margin-top: 48px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: #ddd;
+    letter-spacing: 0.1em;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="name-block">
+    <div class="name-ko">권신경아</div>
+    <div class="name-en">KWON SHIN KA</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="links">
+
+    <!-- 커뮤니티 링크 먼저 -->
+    <a class="community-item" href="https://cafe.naver.com/offsignal" target="_blank">
+      <span class="community-num">—</span>
+      <span class="community-text">oFF sIGNAL official cafe</span>
+      <span class="community-arrow">→</span>
+    </a>
+
+    <a class="community-item" href="https://open.kakao.com/o/gDvNAUsi" target="_blank">
+      <span class="community-num">—</span>
+      <span class="community-text">oFF sIGNAL open chatting room</span>
+      <span class="community-arrow">→</span>
+    </a>
+
+    <!-- 구분 여백 -->
+    <div style="height:12px;"></div>
+
+    <!-- 프로젝트 링크 -->
+       <a class="link-item" href="./persistence_2026_cafe_v2.html" target="_blank">
+      <div class="link-num">02</div>
+      <div class="link-body">
+        <div class="link-tag">2026 · MMG · 비판적 문화유산</div>
+        <div class="link-title">잔존 — 사라지는 장소를 탐험하는 중</div>
+        <div class="link-sub">Persistence: A Non-Heritage Memory Network</div>
+      </div>
+      <div class="link-arrow">→</div>
+    </a>
+    <a class="link-item" href="./syllabus_s2s3_summary.html" target="_blank">
+      <div class="link-num">01</div>
+      <div class="link-body">
+        <div class="link-tag">2026 · 인문공동체 대안연</div>
+        <div class="link-title">사유의 귀환 / 사유의 생태계</div>
+        <div class="link-sub">지능 문법 · 시즌 2 &amp; 3 강의 안내</div>
+      </div>
+      <div class="link-arrow">→</div>
+    </a>
+
+
+
+  </div>
+
+  <div class="footer">© 2026 KWON SHIN KA</div>
+
+</div>
+
+</body>
+</html>
